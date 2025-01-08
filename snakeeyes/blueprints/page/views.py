@@ -4,12 +4,12 @@ page = Blueprint("page", __name__, template_folder="templates")
 
 @page.route('/')
 def home():
-    return render_template("page/home.html")
+    return render_template("home.html")
 
 @page.route("/terms")
 def terms():
-    return render_template("page/terms.html")
+    return render_template("terms.html")
 
 @page.route("/privacy")
 def privacy():
-    return render_template("page/privacy.html")
+    return render_template("privacy.html")

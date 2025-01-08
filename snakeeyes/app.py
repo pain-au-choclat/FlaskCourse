@@ -1,4 +1,5 @@
 from flask import Flask
+from datetime import date
 
 from snakeeyes.blueprints.page import page
 
@@ -11,6 +12,10 @@ def create_app():
 
     app.config.from_object('config.settings')
     app.config.from_pyfile('settings.py', silent=True)
+
+    @app.context_processor
+    def inject_today_date():
+        return dict(today_date = date.today().year)
 
     app.register_blueprint(page)
     
