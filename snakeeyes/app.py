@@ -2,6 +2,7 @@ from flask import Flask
 from datetime import date
 
 from snakeeyes.blueprints.page import page
+from snakeeyes.extensions import debug_toolbar
 
 
 def create_app(settings_override=None):
@@ -21,4 +22,17 @@ def create_app(settings_override=None):
         return dict(today_date=date.today().year)
 
     app.register_blueprint(page)
+    extensions(app)
     return app
+
+
+def extensions(app):
+    """
+    Register 0 or more extensions (mutates the app passed in).
+
+    :param app: Flask application instance
+    :return: None
+    """
+    debug_toolbar.init_app(app)
+
+    return None
