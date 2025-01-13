@@ -6,7 +6,7 @@ from snakeeyes.blueprints.page import page
 
 def create_app(settings_override=None):
 
-    # Create a Flask application using the app factory pattern. 
+    # Create a Flask application using the app factory pattern.
     app = Flask(__name__, instance_relative_config=True)
 
     app.config.from_object('config.settings')
