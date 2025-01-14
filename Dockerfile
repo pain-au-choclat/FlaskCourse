@@ -23,4 +23,4 @@ RUN pip install --editable .
 #USER appuser
 
 # During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--access-logfile", "snakeeyes.app:create_app()"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--access-logfile", "snakeeyes.app:create_app()"]

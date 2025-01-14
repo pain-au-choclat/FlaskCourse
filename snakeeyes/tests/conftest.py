@@ -3,12 +3,13 @@ import pytest
 from snakeeyes.app import create_app
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope='session')
 def app():
     # Setup up test flask app
     params = {
-        "DEBUG": False,
-        "TESTING": True
+        'DEBUG': False,
+        'TESTING': True,
+        'WTF_CSRF_ENABLED': False
     }
 
     _app = create_app(settings_override=params)
