@@ -63,6 +63,7 @@ def _try_renderer_template(template_path, ext='txt', **kwargs):
     :type ext: str
     :return: str
     """
+
     try:
         return render_template('{0}.{1}'.format(template_path, ext), **kwargs)
     except IOError:

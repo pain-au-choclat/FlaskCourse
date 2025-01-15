@@ -21,6 +21,6 @@ def deliver_contact_email(email, message):
                           sender=email,
                           recipients=[celery.conf.get('MAIL_USERNAME')],
                           reply_to=email,
-                          template='contact/mail/index', ctx=ctx)
+                          template='email/index', ctx=ctx)
 
     return None

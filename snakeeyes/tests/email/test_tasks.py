@@ -1,9 +1,9 @@
 from snakeeyes.extensions import mail
-from snakeeyes.blueprints.contact.tasks import deliver_contact_email
+from snakeeyes.email.tasks import deliver_contact_email
 
 
 class TestTasks(object):
-    def test_deliver_support_email(self):
+    def test_deliver_contact_email(self):
         """ Deliver a contact email. """
 
         form = {
